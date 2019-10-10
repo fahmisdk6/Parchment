@@ -334,7 +334,7 @@ open class EMPageViewController: UIViewController, UIScrollViewDelegate {
             
             self.selectedViewController!.endAppearanceTransition()
             
-            self.removeChildIfNeeded(self.beforeViewController)
+            self.beforeViewController?.view.removeFromSuperview()
             self.beforeViewController?.endAppearanceTransition()
             
             self.delegate?.em_pageViewController?(self, didFinishScrollingFrom: self.beforeViewController, destinationViewController: self.selectedViewController!, transitionSuccessful: true)
@@ -361,7 +361,7 @@ open class EMPageViewController: UIViewController, UIScrollViewDelegate {
             
             self.selectedViewController!.endAppearanceTransition()
             
-            self.removeChildIfNeeded(self.afterViewController)
+            self.afterViewController?.view.removeFromSuperview()
             self.afterViewController?.endAppearanceTransition()
             
             self.delegate?.em_pageViewController?(self, didFinishScrollingFrom: self.afterViewController!, destinationViewController: self.selectedViewController!, transitionSuccessful: true)
